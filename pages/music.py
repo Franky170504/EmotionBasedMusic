@@ -120,3 +120,4 @@ if btn:
 
 st.page_link("home.py", label="Home", icon="🏠")
 st.page_link("pages/login.py", label="Back", icon="🔓")
+st.page_link("pages/delete_acc.py", label="Delete Account", icon="🔓")

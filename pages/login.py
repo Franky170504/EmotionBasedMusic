@@ -42,3 +42,4 @@ if st.button('Login'):
 st.page_link("home.py", label="Home", icon="🏠")
 st.page_link("pages/forget_pass.py", label="Forget Password", icon="🔓")
 st.page_link("pages/forget_user.py", label="Forget Username", icon="🔓")
+st.page_link("pages/delete_acc.py", label="Delete Account", icon="🔓")
