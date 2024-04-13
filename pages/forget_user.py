@@ -26,7 +26,7 @@ def update_password(email_id, new_username):
     conn.commit()
 	
 email_id = st.text_input("Enter Email ID")
-new_username = st.text_input("Enter New Password", type = 'password')
+new_username = st.text_input("Enter New Username")
 
 if st.button("Change Password"):
     if not(email_id and new_username):
