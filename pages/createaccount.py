@@ -22,18 +22,22 @@ conn = sqlite3.connect(os.path.join(db_dir,"login.db"))
 c = conn.cursor()
 
 def create_usertable():
-	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
+	c.execute('CREATE TABLE IF NOT EXISTS userstable(email_id TEXT,username TEXT,password TEXT)')
 
-def add_userdata(username,password):
-	c.execute('INSERT INTO users(username,password) VALUES (?,?)',(username,password))
+def add_userdata(email_id, username, password):
+	c.execute('INSERT INTO users(email_id, username, password) VALUES (?,?)',(email_id,username,password))
 	conn.commit()
 
+email_id = st.text_input("Enter Email ID")
 username = st.text_input("Enter Username")
 password = st.text_input("Enter Password", type = 'password')
 pass_confirm = st.text_input("Confirm Password", type = "password" )
 
 if st.button("Create account"):
-    if not(username and password and pass_confirm):
+    if not email_id.endswith("@gmail.com" or "@outlook.com"):
+        st.error("Please enter a valid Gmail address ending with @gmail.com")
+
+    elif not(email_id and username and password and pass_confirm):
         st.error("Above Field Cannot be Empty")
     elif password == pass_confirm:
         add_userdata(username ,password)
