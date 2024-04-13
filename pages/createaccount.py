@@ -23,7 +23,7 @@ c = conn.cursor()
 
 def create_usertable():
 	c.execute('CREATE TABLE IF NOT EXISTS userstable(email_id TEXT,username TEXT,password TEXT)')
-
+    
 def add_userdata(email_id, username, password):
 	c.execute('INSERT INTO users(email_id, username, password) VALUES (?,?)',(email_id,username,password))
 	conn.commit()
@@ -40,7 +40,7 @@ if st.button("Create account"):
     elif not(email_id and username and password and pass_confirm):
         st.error("Above Field Cannot be Empty")
     elif password == pass_confirm:
-        add_userdata(username ,password)
+        add_userdata(email_id, username ,password)
         st.success("Account created! Login")
         st.write("Redirecting to Login page Login with created User id")
         time.sleep(2)
