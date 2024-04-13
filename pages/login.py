@@ -39,3 +39,5 @@ if st.button('Login'):
     else:
         st.warning("Incorrect Username/Password")
 
+st.page_link("home.py", label="Home", icon="🏠")
+st.page_link("pages/forget_pass.py", label="Forget Password", icon="🔓")

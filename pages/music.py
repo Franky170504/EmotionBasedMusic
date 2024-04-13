@@ -16,7 +16,13 @@ st.set_page_config(
 	layout = "wide",
 	initial_sidebar_state= "collapsed"
 )
-
+st.markdown("""
+    <style>
+        section[data-testid="stSidebar"][aria-expanded="true"]{
+            display: none;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 model_dir = os.path.join("C:\laukik\python_projects\EmotionBasedMusic\models")
 model  = load_model(os.path.join(model_dir,"model.keras"))
 label = np.load(os.path.join(model_dir,"labels.npy"))
