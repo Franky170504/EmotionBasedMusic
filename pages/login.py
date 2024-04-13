@@ -33,7 +33,7 @@ password = st.text_input("Password", type="password")
 if st.button('Login'):
     result = login_user(username,password)
     if result:
-        st.success("Logged In as {}".format(username))
+        st.success(f"Logged In as {username}")
         time.sleep(3)
         st.switch_page("pages/music.py")
     else:
