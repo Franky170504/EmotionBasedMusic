@@ -31,18 +31,20 @@ hands = mp.solutions.hands
 holis = holistic.Holistic()
 drawing = mp.solutions.drawing_utils
 
-# background_image = """
-# <style>
-# [data-testid="stAppViewContainer"] > .main {
-#     background-image: 
-# 	url("https://i.postimg.cc/tgzrbkPG/background-m-H05-EMpiq-transformed.jpg");]
-#     background-size: 100vw 100vh;
-#     background-position: fit to page;  
-#     background-repeat: no-repeat;
-# }
-# </style>
-# """
-# st.markdown(background_image, unsafe_allow_html=True)
+st.write("hi")
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: 
+	url("https://i.postimg.cc/tgzrbkPG/background-m-H05-EMpiq-transformed.jpg");]
+    background-size: 100vw 100vh;
+    background-position: fit to page;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(background_image, unsafe_allow_html=True)
+
 st.header(r"$\textsf{\large Welcome to Emotion Based Music Recommender}$", anchor=False)
 if "run" not in st.session_state:
 	st.session_state["run"] = "true"

@@ -20,7 +20,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("Streamlit Login App")
+# st.title("Streamlit Login App")
 
 def login_user(username,password):
 	c.execute('SELECT * FROM users WHERE username =? AND password = ?',(username,password))
