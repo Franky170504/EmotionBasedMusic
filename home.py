@@ -8,7 +8,7 @@ st.set_page_config(	page_title="Emotion based music",
 )
 st.header(r"$\textsf{\large Welcome to Emotion Based Music Recommender}$")
 st.markdown('''
-                            Happy
+ 
 
 ''')
 st.page_link("pages/createaccount.py", label="Sign in", icon="🏠")
