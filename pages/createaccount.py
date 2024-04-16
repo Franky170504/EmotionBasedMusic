@@ -30,6 +30,10 @@ def add_userdata(email_id, username, password):
 	c.execute('INSERT INTO users(email_id, username, password) VALUES (?,?,?)',(email_id,username,password))
 	conn.commit()
 
+def user_exists(email_id,username) -> bool:
+    c.execute("SELECT 1 FROM users WHERE (email_id, username) = (?,?)", (email_id,username))
+    return c.fetchone() is not None
+
 email_id = st.text_input("Enter Email ID")
 username = st.text_input("Enter Username")
 password = st.text_input("Enter Password", type = 'password')
@@ -41,11 +45,14 @@ if st.button("Create account"):
     elif not(email_id and username and password and pass_confirm):
         st.error("Above Field Cannot be Empty")
     elif password == pass_confirm:
-        add_userdata(email_id, username ,password)
-        st.success("Account created! Login")
-        st.write("Redirecting to Login page Login with created User id")
-        time.sleep(2)
-        st.switch_page("pages/login.py")
+        if add_userdata(email_id, username ,password):
+                st.success("Account created! Login")
+                st.write("Redirecting to Login page Login with created User id")
+                time.sleep(2)
+                st.switch_page("pages/login.py")
+        elif user_exists(email_id, username):
+                st.error("Username already exists")
+        
     elif password != pass_confirm:
         st.error("Password and Confirmation does not match")
         
