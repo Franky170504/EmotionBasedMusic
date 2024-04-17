@@ -16,7 +16,7 @@ background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
     background-image: 
-	url("https://i.postimg.cc/k4vVZRkQ/Screenshot-2024-04-18-004541.png");]
+	url("https://i.postimg.cc/76wkmwjc/Screenshot-2024-04-18-011330.png");]
     background-size: 100vw 100vh;
     background-position: center;  
     background-repeat: no-repeat;
@@ -24,6 +24,16 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+st.markdown("""
+    <style>
+        .reportview-container {
+            margin-top: -10em;
+        }
+        .stDeployButton {display:none;}
+        footer {visibility: hidden;}
+        #stDecoration {display:none;}
+    </style>
+""", unsafe_allow_html=True)
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{
@@ -59,7 +69,7 @@ if st.button("Change Password"):
 col1, col2 = st.columns(2)
 with col1:
     con = col1.container()
-    con.page_link("home.py", label="Home", icon="🏠")
+    con.page_link("home.py", label=r"$\textsf{\large Home}$", icon="🏠")
 with col2:
     con = col2.container()
-    con.page_link("pages/login.py", label="Back", icon="⬅️")
+    con.page_link("pages/login.py",label=r"$\textsf{\large Back}$", icon="⬅️")

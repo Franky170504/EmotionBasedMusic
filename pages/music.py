@@ -17,7 +17,16 @@ st.set_page_config(
 	initial_sidebar_state= "collapsed"
 )
 st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
-
+st.markdown("""
+    <style>
+        .reportview-container {
+            margin-top: -10em;
+        }
+        .stDeployButton {display:none;}
+        footer {visibility: hidden;}
+        #stDecoration {display:none;}
+    </style>
+""", unsafe_allow_html=True)
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{
@@ -37,7 +46,7 @@ background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
     background-image: 
-	url("https://i.postimg.cc/zvwhQ9S3/Untitled-design-2.png");]
+	url("https://i.postimg.cc/QCnRJBBq/Untitled-design-2.png");]
     background-size: 100vw 100vh;
     background-position: fit to page;  
     background-repeat: no-repeat;
@@ -122,7 +131,7 @@ if btn:
 col1, col2 = st.columns(2)
 with col1:
     con = col1.container()
-    con.page_link("home.py", label="Home", icon="🏠")
+    con.page_link("home.py", label=r"$\textsf{\large Home}$", icon="🏠")
 with col2:
     con = col2.container()
-    con.page_link("pages/login.py", label="Back", icon="⬅️")
+    con.page_link("pages/login.py", label=r"$\textsf{\large Back}$", icon="⬅️")

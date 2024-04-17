@@ -14,7 +14,7 @@ background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
     background-image: 
-	url("https://i.postimg.cc/SRKxX23G/Whats-App-Image-2024-04-18-at-00-25-24-669c5272.jpg");]
+	url("https://i.postimg.cc/NMt4Zgqv/Screenshot-2024-04-18-020228.png");]
     background-size: 100vw 100vh;
     background-position: fit to page;  
     background-repeat: no-repeat;
@@ -29,7 +29,16 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
-
+st.markdown("""
+    <style>
+        .reportview-container {
+            margin-top: -10em;
+        }
+        .stDeployButton {display:none;}
+        footer {visibility: hidden;}
+        #stDecoration {display:none;}
+    </style>
+""", unsafe_allow_html=True)
 db_dir = os.path.join("C:\laukik\python_projects\EmotionBasedMusic\database")
 conn = sqlite3.connect(os.path.join(db_dir,"login.db"))
 c = conn.cursor()
@@ -56,7 +65,7 @@ if st.button("Delete account"):
 col1, col2 = st.columns(2)
 with col1:
     con = col1.container()
-    con.page_link("home.py", label="Home", icon="🏠")
+    con.page_link("home.py", label=r"$\textsf{\large Home}$", icon="🏠")
 with col2:
     con = col2.container()
-    con.page_link("pages/login.py", label="Back", icon="⬅️")
+    con.page_link("pages/login.py",label=r"$\textsf{\large Back}$", icon="⬅️")
