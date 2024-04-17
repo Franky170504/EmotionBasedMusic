@@ -38,7 +38,7 @@ background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
     background-image: 
-	url("https://i.postimg.cc/1zcgmfwj/bg2.jpg");]
+	url("https://i.postimg.cc/1zcgmfwj/bg2.jpg");
     background-size: 100vw 100vh;
     background-position: fit to page;  
     background-repeat: no-repeat;

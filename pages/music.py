@@ -119,6 +119,10 @@ if btn:
 		np.save(os.path.join(model_dir,"emotion.npy"), np.array([""]))
 		st.session_state["run"] = "false"
 
-st.page_link("home.py", label="Home", icon="🏠")
-st.page_link("pages/login.py", label="Back", icon="🔓")
-st.page_link("pages/delete_acc.py", label="Delete Account", icon="🔓")
+col1, col2 = st.columns(2)
+with col1:
+    con = col1.container()
+    con.page_link("home.py", label="Home", icon="🏠")
+with col2:
+    con = col2.container()
+    con.page_link("pages/login.py", label="Back", icon="⬅️")

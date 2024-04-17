@@ -9,6 +9,19 @@ st.set_page_config(	page_title="Emotion based music",
     page_icon = im,
     layout="wide"
 )
+st.header(r"$\textsf{\large Delete account}$")
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: 
+	url("https://i.postimg.cc/SRKxX23G/Whats-App-Image-2024-04-18-at-00-25-24-669c5272.jpg");]
+    background-size: 100vw 100vh;
+    background-position: fit to page;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(background_image, unsafe_allow_html=True)
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{
@@ -25,15 +38,25 @@ def delete_userdata(username):
     c.execute('DELETE FROM users WHERE username=? ', (username,))
     conn.commit()
 
-email_id = st.text_input("Enter Email ID")
-username = st.text_input("Enter Username")
-password = st.text_input("enter Password", type= "password")
+email_id = st.text_input(r"$\textsf{\large Enter Email ID}$")
+username = st.text_input(r"$\textsf{\large Enter Username}$")
+password = st.text_input(r"$\textsf{\large Enter Password}$", type= "password")
+
 if st.button("Delete account"):
-    delete_userdata(username)
-    st.success("Successfully deleted your account")
-    time.sleep(3)
-    st.switch_page("pages/login.py")
+    st.warning("Are you sure you want to delete?")
+    col1, col2 = st.columns(2)
+    if col1.button("Yes"):
+        delete_userdata(username)
+        st.success("Successfully deleted your account")
+        time.sleep(3)
+        st.switch_page("pages/login.py")
+    elif col2.button("No"):
+        st.warning("")
 
-
-st.page_link("home.py", label="Home", icon="🏠")
-st.page_link("pages/login.py", label="Back", icon="🔓")
+col1, col2 = st.columns(2)
+with col1:
+    con = col1.container()
+    con.page_link("home.py", label="Home", icon="🏠")
+with col2:
+    con = col2.container()
+    con.page_link("pages/login.py", label="Back", icon="⬅️")
