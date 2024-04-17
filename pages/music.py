@@ -16,6 +16,8 @@ st.set_page_config(
 	layout = "wide",
 	initial_sidebar_state= "collapsed"
 )
+st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{
@@ -31,12 +33,11 @@ hands = mp.solutions.hands
 holis = holistic.Holistic()
 drawing = mp.solutions.drawing_utils
 
-st.write("hi")
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
     background-image: 
-	url("https://i.postimg.cc/tgzrbkPG/background-m-H05-EMpiq-transformed.jpg");]
+	url("https://i.postimg.cc/zvwhQ9S3/Untitled-design-2.png");]
     background-size: 100vw 100vh;
     background-position: fit to page;  
     background-repeat: no-repeat;
@@ -101,8 +102,6 @@ class EmotionProcessor:
 
 lang = st.text_input(r"$\textsf{\LARGE Enter the language of the music}$")
 singer = st.text_input(r"$\textsf{\LARGE Enter the name of the singer}$")
-dec = st.text_input(r"$\textsf{\LARGE Enter the decade in which the song was released}$")
-
 if lang == NULL:
 	emotion = False
 elif lang and st.session_state["run"] != "false":
@@ -116,7 +115,7 @@ if btn:
 		st.warning("Language cannot be empty")
 		st.session_state["run"] = "true"
 	else:
-		webbrowser.open(f"https://www.youtube.com/results?search_query={lang}+{emotion}+song+{singer}+{dec}")
+		webbrowser.open(f"https://www.youtube.com/results?search_query={lang}+{emotion}+song+{singer}")
 		np.save(os.path.join(model_dir,"emotion.npy"), np.array([""]))
 		st.session_state["run"] = "false"
 
