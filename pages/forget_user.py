@@ -9,6 +9,18 @@ st.set_page_config(	page_title="Emotion based music",
     page_icon = im,
     layout="wide"
 )
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: 
+	url("https://i.postimg.cc/76wkmwjc/Screenshot-2024-04-18-011330.png");]
+    background-size: 100vw 100vh;
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(background_image, unsafe_allow_html=True)
 st.markdown("""
     <style>
         .reportview-container {
