@@ -29,6 +29,18 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
+background_image = """
+<style>
+[data-testid="stAppViewContainer"] > .main {
+    background-image: 
+	url("https://i.postimg.cc/63rH0rVj/Untitled-design-3.png");]
+    background-size: 100vw 100vh;
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(background_image, unsafe_allow_html=True)
 st.markdown("""
     <style>
         .reportview-container {
