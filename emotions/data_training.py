@@ -41,7 +41,6 @@ def load_data(data_dir):
     
     # One-hot encode labels (optional for multi-class classification)
     y = to_categorical(y)
-    #print("Y ->",y)
 
     return X, y, label, dictionary
 
@@ -89,10 +88,7 @@ def main():
     model.fit(X_train, y_train, epochs=50)
 
     save_model(model, data_dir, label)
-
-    # model.save("model.h5")
-    # np.save("labels.npy", np.array(label))
-   
+ 
 if __name__ == "__main__" :
     main()
 

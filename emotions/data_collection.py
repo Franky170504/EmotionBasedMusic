@@ -66,6 +66,3 @@ while True:
 
 data_dir = os.getcwd()
 save_emotion(X, data_dir)
-# print("date->",data_dir)
-# print("hi")
-
