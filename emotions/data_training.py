@@ -1,6 +1,5 @@
 import os
 import numpy as np
-from tensorflow import keras
 from keras.layers import Input, Dense
 from keras.models import Model
 from keras.utils import to_categorical
