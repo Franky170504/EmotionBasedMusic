@@ -32,7 +32,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("Streamlit Login App")
+st.title("Login")
 
 background_image = """
 <style>
