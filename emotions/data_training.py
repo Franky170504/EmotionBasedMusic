@@ -23,14 +23,20 @@ def load_data(data_dir):
             else:
                 X = np.concatenate((X, data))  # Concatenate subsequent data
 
+            # Create labels and dictionary
             class_name = filename.split(".")[0]
-            y.extend([class_name] * size) 
+            y.extend([class_name] * size)  # More efficient list extension
             label.append(class_name)
             dictionary[class_name] = c
             c += 1
 
+    # Convert labels to numerical form using dictionary
+    
     y = np.array([dictionary[class_name] for class_name in y], dtype="int32")
+    
+    # One-hot encode labels (optional for multi-class classification)
     y = to_categorical(y)
+
     return X, y, label, dictionary
 
 
@@ -69,4 +75,3 @@ def main():
 
 if __name__ == "__main__" :
     main()
-
