@@ -9,7 +9,7 @@ st.set_page_config(	page_title="Emotion based music",
     page_icon = im,
     layout="wide"
 )
-# st.write('<style>div.block-container{padding-top:2rem;}</style>', unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         .reportview-container {
@@ -24,6 +24,7 @@ st.markdown("""
 db_dir = os.path.join("C:\laukik\python_projects\EmotionBasedMusic\database")
 conn = sqlite3.connect(os.path.join(db_dir,"login.db"))
 c = conn.cursor()
+
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{

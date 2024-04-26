@@ -4,12 +4,12 @@ import os
 import sqlite3
 import time
 
-
 im = Image.open("C:\laukik\python_projects\EmotionBasedMusic\media\songicon.jpg")
 st.set_page_config(	page_title="Emotion based music", 
     page_icon = im,
     layout="wide"
 )
+
 st.header(r"$\textsf{\large Forget Password}$")
 
 background_image = """
@@ -24,6 +24,7 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         .reportview-container {
@@ -34,6 +35,7 @@ st.markdown("""
         #stDecoration {display:none;}
     </style>
 """, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{

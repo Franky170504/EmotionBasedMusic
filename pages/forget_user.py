@@ -9,6 +9,7 @@ st.set_page_config(	page_title="Emotion based music",
     page_icon = im,
     layout="wide"
 )
+
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -31,6 +32,7 @@ st.markdown("""
         #stDecoration {display:none;}
     </style>
 """, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{

@@ -9,7 +9,9 @@ st.set_page_config(	page_title="Emotion based music",
     page_icon = im,
     layout="wide"
 )
+
 st.header(r"$\textsf{\large Delete account}$")
+
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -22,13 +24,16 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         section[data-testid="stSidebar"][aria-expanded="true"]{
             display: none;
         }
     </style>
+
     """, unsafe_allow_html=True)
+
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -41,6 +46,7 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
         .reportview-container {
@@ -51,6 +57,7 @@ st.markdown("""
         #stDecoration {display:none;}
     </style>
 """, unsafe_allow_html=True)
+
 db_dir = os.path.join("C:\laukik\python_projects\EmotionBasedMusic\database")
 conn = sqlite3.connect(os.path.join(db_dir,"login.db"))
 c = conn.cursor()

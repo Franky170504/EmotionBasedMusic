@@ -32,6 +32,16 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+
+custom_css = """
+<style>
+.stPageLink {
+    font-size: 20px; 
+    }
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 st.markdown(
     """
     ### Scan your emtions and listen the sonds based on your mood!!
@@ -44,14 +54,6 @@ st.markdown(
 """
 )
 
-custom_css = """
-<style>
-.stPageLink {
-    font-size: 20px; 
-    }
-</style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
     con = col1.container(height=100)
