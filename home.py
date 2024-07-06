@@ -44,7 +44,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.markdown(
     """
-    ### Scan your emtions and listen the sonds based on your mood!!
+    ### Scan your emtions and listen the songs based on your mood!!
     """
 )
 st.markdown(" ")
